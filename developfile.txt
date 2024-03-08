@@ -1,0 +1,2 @@
+iam currently learning about git branch and git git checkout we should always work on independent branch and can switch between branches using git checkout
+
