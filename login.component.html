@@ -1,0 +1,20 @@
+
+    <div class="container p-4 bg-white rounded shadow mt-5" style="max-width: 500px; width: 100%;">
+        <h2 class="text-center  text-primary">Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            Email*<br>
+            <input type="text" name="email" formControlName="email"><br>
+            <div *ngIf="loginForm.controls.email?.invalid && (loginForm.controls.email.dirty ||loginForm.controls.email.touched)"
+                class="error-message text-danger">
+                Email is required
+            </div><br>
+            Password* <br>
+            <input type="password" id="password" name="password" formControlName="password"><br>
+            <div *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password.dirty ||loginForm.controls.password.touched)"
+                class="error-message text-danger">
+                Password is required
+            </div><br>
+            <button type="submit"  class="btn btn-primary" [disabled]="loginForm.invalid" >Login</button>
+        </form>
+    </div>
+

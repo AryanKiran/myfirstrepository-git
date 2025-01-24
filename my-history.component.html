@@ -1,0 +1,23 @@
+<h2>My History</h2>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-danger">
+        <th scope="col">Booking ID</th>
+        <th scope="col">Booking Date</th>
+        <th scope="col">Number of Passengers</th>
+        <th scope="col">Current Status</th>
+        <th scope="col">Flight Number</th>
+
+        
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of bookingHistory" >
+        <td>{{b.bookingId}}</td>
+        <td>{{b.bookingDate}}</td>
+        <td>{{b.numberOfPassengers}}</td>
+        <td>{{b.status}}</td>
+        <td>{{b.flight.flightNumber}}</td>
+    </tr>
+</tbody>
+</table>

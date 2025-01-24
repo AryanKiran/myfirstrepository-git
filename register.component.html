@@ -1,0 +1,54 @@
+
+    <div class="container p-4 bg-white rounded shadow my-4" style="max-width: 500px; width: 100%;">
+        <h2 class="text-center text-primary">Registration</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            Username*<br>
+            <input type="text" id="username" name="username" formControlName="username"><br>
+            <div *ngIf="registerForm.controls.username?.invalid && (registerForm.controls.username.dirty ||registerForm.controls.username.touched)"
+                class="error-message text-danger">
+                Username is required
+            </div><br>
+            Email*<br>
+            <input type="text" name="email" formControlName="email"><br>
+            <div *ngIf="registerForm.controls.email?.invalid && (registerForm.controls.email.dirty ||registerForm.controls.email.touched)"
+                class="error-message text-danger">
+                Email is required
+            </div><br>
+            Password* <br>
+            <input type="password" id="password" name="password" formControlName="password"><br>
+            <div *ngIf="registerForm.controls.password?.invalid && (registerForm.controls.password.dirty ||registerForm.controls.password.touched)"
+                class="error-message text-danger">
+                Password is required
+            </div><br>
+            Confirm Password* <br>
+            <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword"><br>
+            <div *ngIf="registerForm.controls.confirmPassword.touched"
+                class="error-message text-danger">
+                <div *ngIf="registerForm.controls.confirmPassword.required">
+                    Confirm Password required
+                </div>
+                <div *ngIf="registerForm.controls.confirmPassword.value!==registerForm.controls.password.value">
+                    Password Mismatch
+                </div>
+            </div><br>
+
+            MobileNumber*<br>
+            <input type="text" id="mobileNumber" name="mobileNumber" formControlName="mobileNumber"><br>
+            <div *ngIf="registerForm.controls.mobileNumber?.invalid && (registerForm.controls.mobileNumber.dirty ||registerForm.controls.mobileNumber.touched)"
+                class="error-message text-danger">
+                Mobile Number is required
+            </div><br>
+            Role*<br>
+            <select name="userRole" formControlName="userRole">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select><br>
+            <div *ngIf="registerForm.controls.userRole?.invalid && (registerForm.controls.userRole.dirty ||registerForm.controls.userRole.touched)"
+                class="error-message text-danger">
+                Role is required
+            </div><br>
+            <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid ">Register</button>
+        </form>
+
+
+</div>
